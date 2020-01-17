@@ -1,0 +1,40 @@
+body {
+    background-color: grey;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 10vw 10vw 10vw;
+    grid-gap: 1vw;
+}
+
+.grid-container > div {
+    background-color: honeydew;
+    font-size: 50px;
+    height: 10vw;
+}
+
+#grid-lines {
+    background-color: black;
+    width: 32vw;
+    margin: auto;
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+    #grid-lines {
+        width: 80vw;
+    }
+
+    .grid-container {
+        grid-template-columns: 26vw 26vw 26vw;
+    }
+
+    .grid-container > div {
+        height: 26vw;
+    }
+}
