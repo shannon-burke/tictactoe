@@ -1,31 +1,38 @@
 $(document).ready(function () {
 
     let xTurn = true;
-    let gameWon = false;
-    xMark = "X";
-    oMark = "O";
+    let xWin = false;
+    let yWin = false;
+    const xMark = "X";
+    const oMark = "O";
 
-    $("#reset").click(function () {
+    let currentSelections = [];
+    let xSelections = [];
+    let oSelections = [];
+
+    function resetGame() {
         $(".game-space").removeClass("marked").empty();
         console.log("reset clicked");
-    });
+    };
 
+    $("#reset").click(resetGame);
 
-    function changeTurn() {
-
+    function doTurn() {
+        selection = event.target.id;
         if (xTurn === true) {
             xTurn = false;
-            //console.log(xMark);
-            //console.log(event.target);
-            $target.append(xMark).hide().fadeIn();
-            console.log("Os turn now!")
+            $target.append(xMark).hide().fadeIn().addClass("x");
+            xSelections.push(parseInt(selection, 10));
+            //console.log(xSelections);
         } else if (xTurn === false) {
             xTurn = true;
-            $target.append(oMark).hide().fadeIn();
-            console.log("Xs turn now!")
+            $target.append(oMark).hide().fadeIn().addClass("o");
+            oSelections.push(parseInt(selection, 10));
+            //console.log(oSelections);
         }
-
         $target.addClass("marked");
+        currentSelections.push(parseInt(selection, 10));
+        //console.log(currentSelections);
     };
 
     function determineValidTurn() {
@@ -34,16 +41,24 @@ $(document).ready(function () {
             console.log("this spot it already marked");
         }
         else {
-            changeTurn();
+            doTurn();
+        }
+    };
+
+    function determineWin() {
+        if (xWin === true) {
+            alert("Xs win!");
+            resetGame();
+        }
+        else if (yWin === true) {
+            alert("Os win!");
+            resetGame();
+        }
+        else {
+            determineValidTurn();
         }
     }
 
-    function beginGame() {
-        //console.log("begingame working");
-        $(".game-space").click(determineValidTurn);
-    };
-
-
-    beginGame();
+    $(".game-space").click(determineWin);
 
 });
