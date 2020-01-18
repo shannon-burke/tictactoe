@@ -1,5 +1,5 @@
 body {
-    background-color: grey;
+    background-color: honeydew;
 }
 
 .grid-container {
@@ -8,16 +8,24 @@ body {
     grid-gap: 1vw;
 }
 
-.grid-container > div {
-    background-color: honeydew;
-    font-size: 50px;
+.game-space {
+    font-size: 8vw;
     height: 10vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka One', sans-serif;
 }
 
 #grid-lines {
     background-color: black;
     width: 32vw;
     margin: auto;
+}
+
+.bg-color-fix {
+    background-color: honeydew;
 }
 
 
@@ -27,14 +35,16 @@ body {
 @media only screen and (max-width: 768px) {
 
     #grid-lines {
-        width: 80vw;
+        width: 82vw;
     }
 
     .grid-container {
         grid-template-columns: 26vw 26vw 26vw;
+        grid-gap: 2vw;
     }
 
-    .grid-container > div {
+    .game-space {
         height: 26vw;
+        font-size: 20vw;
     }
 }
