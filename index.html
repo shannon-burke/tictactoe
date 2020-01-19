@@ -15,8 +15,12 @@
 </head>
 
 <body>
+    <div id="title">
+        <span id="tic">tic</span><span class="dot">•</span><span id="tac">tac</span><span class="dot">•</span><span
+            id="toe">toe</span>
+    </div>
     <div id="grid-lines">
-        <div class="grid-container">
+        <div class="game-board">
             <div class="bg-color-fix">
                 <div class="game-space" id="1"></div>
             </div>
@@ -47,8 +51,18 @@
         </div>
     </div>
 
-    <button id="reset">reset game</button>
-
+    <!-- <span id="reset">reset game</span> -->
+    <div id="info">
+        <div id="resets">
+            <div id="reset-game">Reset Game</div>
+            <div id="reset-scores">Reset Scores</div>
+        </div>
+        <div id="scores">
+            <div id="x-div">X Score:<br class="large-only"><span id="x-score"> 0</span></div>
+            <div id="o-div">O Score:<br class="large-only"><span id="o-score"> 0</span></div>
+            <div id="draw-div">Draws:<br class="large-only"><span id="draw-count"> 0</span></div>
+        </div>
+    </div>
 
 </body>
 

@@ -1,13 +1,31 @@
 body {
-    background-color: honeydew;
+    background-color: #DCBA92;
+    font-family: 'Fredoka One', sans-serif;
 }
 
-.grid-container {
+#title {
+    margin: auto;
+    text-align: center;
+    font-size: 8vw;
+}
+#tic {
+    color: #21665A;
+}
+#tac {
+    color: #277063;
+}
+#toe {
+    color: #298C7A;
+}
+.dot {
+    color: #A63333;
+}
+
+.game-board {
     display: grid;
     grid-template-columns: 10vw 10vw 10vw;
     grid-gap: 1vw;
 }
-
 .game-space {
     font-size: 8vw;
     height: 10vw;
@@ -17,15 +35,65 @@ body {
     justify-content: center;
     font-family: 'Fredoka One', sans-serif;
 }
-
 #grid-lines {
-    background-color: black;
+    background-color: #A63333;
     width: 32vw;
     margin: auto;
 }
-
 .bg-color-fix {
-    background-color: honeydew;
+    background-color: #DCBA92;
+}
+.x {
+    color: #277063;
+}
+.o {
+    color: #298C7A;
+}
+
+#scores {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: auto 20vw;
+    font-size: 2vw;
+    text-align: center;
+    color: #DCBA92;
+}
+#x-div {
+    background-color: #277063;
+}
+#o-div {
+    background-color: #298C7A;
+}
+#draw-div {
+    background-color: #39A692;
+}
+#x-score, #o-score, #draw-count {
+    color: #A63333
+}
+
+#resets {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto 20vw;
+    font-size: 2vw;
+    text-align: center;
+    color: #DCBA92;
+    background-color: #1C5C51;
+}
+#reset-game:hover {
+    color: #A63333;
+    -webkit-text-stroke-color: #DCBA92;
+    -webkit-text-stroke-width: 0.5px;
+}
+#reset-scores:hover {
+    color: #A63333;
+    -webkit-text-stroke-color: #DCBA92;
+    -webkit-text-stroke-width: 0.5px;
+}
+
+
+#info {
+    margin-top: 2vw;
 }
 
 
@@ -34,11 +102,15 @@ body {
 
 @media only screen and (max-width: 768px) {
 
+    #title {
+        font-size: 15vw;
+    }
+
     #grid-lines {
         width: 82vw;
     }
 
-    .grid-container {
+    .game-board {
         grid-template-columns: 26vw 26vw 26vw;
         grid-gap: 2vw;
     }
@@ -47,4 +119,24 @@ body {
         height: 26vw;
         font-size: 20vw;
     }
+
+    #resets {
+        grid-template-columns: auto;
+        margin: auto 9vw;
+        font-size: 5vw;
+    }
+
+    #scores {
+        grid-template-columns: auto;
+        margin: auto 9vw;
+        font-size: 5vw;
+    }
+
+    .large-only {
+        display: none;
+    }
+    #reset-scores {
+        background-color: #21665A;
+    }
+
 }
