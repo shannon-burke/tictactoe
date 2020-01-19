@@ -89,6 +89,12 @@ $(document).ready(function () {
 
     $(".game-space").click(determineValidMove);
 
+    $("#swap").hover(function () {
+        $(this).text("x");
+    }, function () {
+        $(this).text("o");
+    });
+
     // $("#x-score").text(" " + xScore);
 
 });

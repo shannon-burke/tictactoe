@@ -1,6 +1,7 @@
 body {
     background-color: #F7F1DB;
     font-family: 'Fredoka One', sans-serif;
+    cursor: crosshair;
 }
 
 #title {
@@ -120,16 +121,30 @@ body {
         font-size: 20vw;
     }
 
+    #info {
+        width: 100vw;
+        position: relative;
+        bottom: 0px;
+    }
+
     #resets {
         grid-template-columns: auto;
-        margin: auto 9vw;
-        font-size: 5vw;
+        margin: auto;
+        font-size: 6vw;
     }
 
     #scores {
         grid-template-columns: auto;
-        margin: auto 9vw;
-        font-size: 5vw;
+        margin: auto;
+        font-size: 6vw;
+    }
+
+    #scores > div {
+        padding: 1.5vw;
+    }
+
+    #resets > div {
+        padding: 1.5vw;
     }
 
     .large-only {
